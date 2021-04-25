@@ -61,12 +61,13 @@ while True:
 
     try:
         krw = get_balance("KRW")
-        if krw > 5000 and chk == 0 and rsi <35 :
+        if krw > 5000 and chk == 0 and rsi < 35 :
             upbit.buy_market_order("KRW-DOGE", krw*0.9995)
             chk = 1
             doge = get_balance("DOGE")
-        if rsi >= 60 and chk == 1:
+        if rsi > 60 and chk == 1:
             upbit.sell_market_order("KRW-DOGE", doge*0.9995)
+            chk = 0
         time.sleep(1)
     except Exception as e:
         print(e)
