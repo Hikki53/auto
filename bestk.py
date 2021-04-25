@@ -2,8 +2,10 @@ import pyupbit
 import numpy as np
 
 
+coin = "KRW-TON"
+
 def get_ror(k=0.5):
-    df = pyupbit.get_ohlcv("KRW-EMC2",count=30)
+    df = pyupbit.get_ohlcv(coin,count=30)
     df['range'] = (df['high'] - df['low']) * k
     df['target'] = df['open'] + df['range'].shift(1)
 
