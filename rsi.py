@@ -61,7 +61,7 @@ while True:
 
     try:
         krw = get_balance("KRW")
-        if krw > 5000 and chk == 0 and rsi < 35 :
+        if krw > 5000 and chk == 0 and rsi < 25 :
             upbit.buy_market_order("KRW-DOGE", krw*0.9995)
             chk = 1
             doge = get_balance("DOGE")
